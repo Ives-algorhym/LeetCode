@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "2E3492F5-043F-4C77-944F-B2C947F07F78",
+      "name" : "New UI enable",
+      "options" : {
+        "commandLineArgumentEntries" : [
+          {
+            "argument" : "-isNewUIEnabled YES"
+          }
+        ]
+      }
+    },
+    {
+      "id" : "CAAF79E7-E254-452B-AA34-7D1E3B39C085",
+      "name" : "UI disable",
+      "options" : {
+        "commandLineArgumentEntries" : [
+          {
+            "argument" : "-isNewUIEnabled NO"
+          }
+        ]
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:LeetCode.xcodeproj",
+        "identifier" : "4511EBA32CE963A800236FE0",
+        "name" : "LeetCodeTests"
+      }
+    }
+  ],
+  "version" : 1
+}
