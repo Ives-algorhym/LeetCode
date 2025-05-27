@@ -11,8 +11,9 @@ import XCTest
 final class BinarySearchTreeTests: XCTestCase {
     func test_init() {
         // Arrange
-        let sut = BinarySearchTree()
+        let sut = BinarySearchTree<Int>()
         // Assert
         XCTAssertNotNil(sut)
+        XCTAssertNil(sut.testHooks.root)
     }
 }
