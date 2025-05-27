@@ -1,0 +1,25 @@
+name: Swift CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Swift
+        uses: fwal/setup-swift@v1
+        with:
+          swift-version: '5.9' # Update if needed
+
+      - name: Build
+        run: swift build
+
+      - name: Run tests
+        run: swift test
