@@ -28,7 +28,6 @@
 		4511EBA42CE963A800236FE0 /* LeetCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4511EBAE2CE963A800236FE0 /* LeetCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4565FC852DDC4ECE00432E0C /* Default.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = Default.xctestplan; path = LeetCodeTests/Default.xctestplan; sourceTree = "<group>"; };
-		4565FCFA2DE54FAA00432E0C /* BinaryNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BinaryNodeTests.swift; path = LeetCodeTests/BinaryTree/BinaryNodeTests.swift; sourceTree = "<group>"; };
 		4568F1EA2D45F7F100A26562 /* ActivityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActivityKit.framework; path = System/Library/Frameworks/ActivityKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -65,6 +64,7 @@
 				Arrays/SumOfSortedArrayTests.swift,
 				Arrays/ValidMountainTests.swift,
 				BinaryTree/BinaryNodeTests.swift,
+				BinaryTree/BinarySearchTreeTests.swift,
 				HashSet/HashSetTests.swift,
 				LeetCodeTests.swift,
 				LinkedList/LinkedListTest.swift,
@@ -92,6 +92,7 @@
 				Arrays/SumOfSortedArrayTests.swift,
 				Arrays/ValidMountainTests.swift,
 				BinaryTree/BinaryNodeTests.swift,
+				BinaryTree/BinarySearchTreeTests.swift,
 				HashSet/HashSetTests.swift,
 				LeetCodeTests.swift,
 				LinkedList/LinkedListTest.swift,
@@ -161,7 +162,6 @@
 		4511EB852CE963A300236FE0 = {
 			isa = PBXGroup;
 			children = (
-				4565FCFA2DE54FAA00432E0C /* BinaryNodeTests.swift */,
 				4565FC852DDC4ECE00432E0C /* Default.xctestplan */,
 				4511EB902CE963A300236FE0 /* LeetCode */,
 				458CCD852DB0973C004B476B /* LeetCodeTests */,
