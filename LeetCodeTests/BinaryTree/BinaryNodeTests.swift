@@ -86,4 +86,6 @@ final class BinaryNodeTests: XCTestCase {
         // Assert
         XCTAssertEqual(result, [0,5,1,8,9,7])
     }
+
+    
 }
