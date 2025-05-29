@@ -6,7 +6,7 @@
 //
 
 final class BinaryNode<T> {
-    let value: T
+    var value: T
     var rightChild: BinaryNode?
     var leftChild: BinaryNode?
 
@@ -16,6 +16,9 @@ final class BinaryNode<T> {
 }
 
 extension BinaryNode: CustomStringConvertible {
+    var min: BinaryNode {
+        return leftChild?.min ?? self
+    }
     public var description: String {
         return diagram(for: self)
     }

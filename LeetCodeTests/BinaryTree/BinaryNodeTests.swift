@@ -85,6 +85,5 @@ final class BinaryNodeTests: XCTestCase {
         tree.traversePostOrder { result.append($0) }
         // Assert
         XCTAssertEqual(result, [0,5,1,8,9,7])
-        //test
     }
 }

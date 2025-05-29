@@ -27,7 +27,6 @@
 		4511EB8E2CE963A300236FE0 /* LeetCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4511EBA42CE963A800236FE0 /* LeetCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4511EBAE2CE963A800236FE0 /* LeetCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4565FC852DDC4ECE00432E0C /* Default.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = Default.xctestplan; path = LeetCodeTests/Default.xctestplan; sourceTree = "<group>"; };
 		4568F1EA2D45F7F100A26562 /* ActivityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActivityKit.framework; path = System/Library/Frameworks/ActivityKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -162,7 +161,6 @@
 		4511EB852CE963A300236FE0 = {
 			isa = PBXGroup;
 			children = (
-				4565FC852DDC4ECE00432E0C /* Default.xctestplan */,
 				4511EB902CE963A300236FE0 /* LeetCode */,
 				458CCD852DB0973C004B476B /* LeetCodeTests */,
 				4511EBB12CE963A800236FE0 /* LeetCodeUITests */,
