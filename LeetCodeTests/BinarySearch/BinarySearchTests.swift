@@ -22,10 +22,9 @@ final class BinarySearchTests: XCTestCase {
         XCTAssertEqual(result, 2)
     }
 
-    func test_binarySearch_returnsIndex_whenElementExistsAndIsLessThnMiddle() {
+    func test_binarySearch_returnsIndex_whenElementExistsAndIsLessThanMiddle() {
         let array = [1, 3, 5, 7, 8,9]
         let result = array.binarySearch(for: 3, in: array.startIndex..<array.endIndex)
-        // Assert
         // Assert
         XCTAssertEqual(result, 1)
     }
@@ -33,7 +32,6 @@ final class BinarySearchTests: XCTestCase {
     func test_binarySearch_returnsIndex_whenElementExistsAndIsGraterThanMiddle() {
         let array = [1, 3, 5, 7, 8, 9]
         let result = array.binarySearch(for: 8, in: array.startIndex..<array.endIndex)
-        // Assert
         // Assert
         XCTAssertEqual(result, 4)
     }
