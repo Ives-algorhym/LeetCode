@@ -28,20 +28,20 @@ final class LongestSubstringWithoutRepeatingCharactersTests: XCTestCase {
         // Arrange
         let sut = LongestSubstringWithoutRepeatingCharacter()
         // Assert
-        XCTAssertEqual(sut.lenghtOfLongestSubstring(""), 0)
+        XCTAssertEqual(sut.lengthOfLongestSubstring(""), 0)
     }
 
     func testLenghtOfLongestSubstring_withAllRepeats_returns1() {
         // Arrange
         let sut = LongestSubstringWithoutRepeatingCharacter()
         // Assert
-        XCTAssertEqual(sut.lenghtOfLongestSubstring("bbbbb"), 1)
+        XCTAssertEqual(sut.lengthOfLongestSubstring("bbbbb"), 1)
     }
 
     func testLenghtOfLongestSubstring_withNoRepeat_returnsLenght() {
         // Arrange
         let sut = LongestSubstringWithoutRepeatingCharacter()
         // Assert
-        XCTAssertEqual(sut.lenghtOfLongestSubstring("abcdefg"), 7)
+        XCTAssertEqual(sut.lengthOfLongestSubstring("abcdefg"), 7)
     }
 }

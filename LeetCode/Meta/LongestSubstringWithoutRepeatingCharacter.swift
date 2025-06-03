@@ -6,7 +6,6 @@
 //
 
 final class LongestSubstringWithoutRepeatingCharacter {
-
     func lenghtOfLongestSubstringBruteForceArray(_ string: String) -> Int {
         let characters = Array(string)
         let count = characters.count
@@ -22,6 +21,17 @@ final class LongestSubstringWithoutRepeatingCharacter {
         }
 
         return maxLenght
+    }
+
+    func isUnique(_ chars: [Character]) -> Bool {
+        var seen = Set<Character>()
+        for char in chars {
+            if seen.contains(char) {
+                return false
+            }
+            seen.insert(char)
+        }
+        return true
     }
 
     func lenghtOfLongestSubstringBruteForceDictionary(_ string: String) -> Int {
@@ -49,8 +59,8 @@ final class LongestSubstringWithoutRepeatingCharacter {
 
         return maxLenght
     }
-    func lenghtOfLongestSubstringSet(_ string: String) -> Int {
 
+    func lenghtOfLongestSubstringSet(_ string: String) -> Int {
         var seen: Set<Character> = []
         var left = string.startIndex
         var maxLenght = 0
@@ -76,7 +86,6 @@ final class LongestSubstringWithoutRepeatingCharacter {
     }
 
     func lenghtOfLongestSubstringOptimize(_ string: String) -> Int {
-
         var charToNextIndex: [Character: Int] = [:]
         var maxLength = 0
         var start = 0
@@ -94,37 +103,38 @@ final class LongestSubstringWithoutRepeatingCharacter {
         return maxLength
     }
 
-    func lenghtOfLongestSubstring(_ string: String) -> Int {
-        var charToLastSeenIndex: [Character: String.Index] = [:]
-        var maxLength = 0
-        var start = string.startIndex
+    func lengthOfLongestSubstring(_ string: String) -> Int {
+           // ✅ Dictionary to map each character to its last seen index
+           var charToLastSeenIndex: [Character: String.Index] = [:]
 
-        var end = start
-        while end < string.endIndex {
-            let char = string[end]
+           // ✅ Tracks the max substring length found so far
+           var maxLength = 0
 
-            if let lastSeen = charToLastSeenIndex[char], lastSeen >= start {
-                start = string.index(after: lastSeen)
-            }
+           // ✅ Start of the sliding window
+           var start = string.startIndex
 
-            let length = string.distance(from: start, to: string.index(after: end))
-            maxLength = max(maxLength, length)
+           // ✅ Iterate over the string using String.Index for Unicode safety
+           var end = start
+           while end < string.endIndex {
+               let char = string[end]
 
-            charToLastSeenIndex[char] = end
-            end = string.index(after: end)
-        }
+               // ✅ If character has been seen and is within current window
+               if let lastSeen = charToLastSeenIndex[char], lastSeen >= start {
+                   // ✅ Move window start to just after last occurrence
+                   start = string.index(after: lastSeen)
+               }
 
-        return maxLength
-    }
+               // ✅ Update max length using the current window size
+               let currentLength = string.distance(from: start, to: string.index(after: end))
+               maxLength = max(maxLength, currentLength)
 
-    func isUnique(_ chars: [Character]) -> Bool {
-        var seen = Set<Character>()
-        for char in chars {
-            if seen.contains(char) {
-                return false
-            }
-            seen.insert(char)
-        }
-        return true
+               // ✅ Update the character’s last seen position
+               charToLastSeenIndex[char] = end
+
+               // ✅ Move window end forward
+               end = string.index(after: end)
+           }
+
+           return maxLength
     }
 }
