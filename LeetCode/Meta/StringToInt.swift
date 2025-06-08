@@ -6,10 +6,10 @@
 //
 
 struct StringToInt {
-    func myAtoi(_ input: String) -> Int {
+    func myAtoi(_ s: String) -> Int {
 
-        var index = input.startIndex
-        let end = input.endIndex
+        var index = s.startIndex
+        let end = s.endIndex
         var sign = 1
         var result = 0
 
@@ -18,29 +18,29 @@ struct StringToInt {
         let INT_MIN = Int(Int32.min)
 
         // 1. Skip leading spaces
-        while index < end, input[index] == " " {
-            index = input.index (after: index)
+        while index < end, s[index] == " " {
+            index = s.index (after: index)
         }
 
         // 2. handle sign
         if index < end {
-            if input[index] == "+" {
+            if s[index] == "+" {
                 sign = 1
-                index = input.index(after: index)
-            } else if input[index] == "-" {
+                index = s.index(after: index)
+            } else if s[index] == "-" {
                 sign = -1
-                index = input.index(after: index)
+                index = s.index(after: index)
             }
         }
 
         // 3. Parse digits and handle overflow
-        while index < end, let digit = input[index].wholeNumberValue {
-            if result > INT_MAX / 10 || (result == INT_MAX && digit > INT_MAX % 10) {
+        while index < end, let digit = s[index].wholeNumberValue {
+            if result > INT_MAX / 10 || (result == INT_MAX/10 && digit > INT_MAX % 10) {
                 return sign == 1 ? INT_MAX : INT_MIN
             }
 
             result = result * 10 + digit
-            index = input.index(after: index)
+            index = s.index(after: index)
 
         }
         return sign * result
