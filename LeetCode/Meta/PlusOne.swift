@@ -5,7 +5,7 @@
 //  Created by Ives Murillo on 6/17/25.
 //
 
-class Solution {
+struct PlusOne {
     /// Increments a large number represented as an array of digits.
     /// - Parameter digits: The input array where each element is a digit.
     /// - Returns: The incremented number as an array of digits.
