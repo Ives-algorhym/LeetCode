@@ -70,3 +70,17 @@ struct TwoSum {
     }
 }
 
+func twoSumAllResults(_ nums: [Int], target: Int) -> [Int] {
+    var map: [Int: Int] = [:]
+    var results: [[Int]] = []
+
+    for (i, num) in nums.enumerated() {
+        let complement = target - num
+        if let complementIndex = map[complement], complementIndex != i {
+            results.append([complementIndex, i])
+        }
+        map[num] = i
+    }
+
+    return results.first ?? []
+}
