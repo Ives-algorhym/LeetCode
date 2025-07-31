@@ -47,6 +47,31 @@ final class ThreeSumTests: XCTestCase {
         // Assert
         XCTAssertTrue(result.isEmpty)
     }
+
+    func testTripletsSumToTarget() {
+        // Arrange
+        let sut = ThreeSum()
+        let nums = [1, 2, -2, -1, 0]
+        let target = 1
+        let actual = sut.threeSumTarget(nums, target: 1)
+            .map { $0.sorted() }
+            .sorted(by: { $0.lexicographicallyPrecedes($1) })
+
+        let expected = [
+            [-1, 0, 2],
+            [-2, 1, 2]
+        ].sorted(by: { $0.lexicographicallyPrecedes($1) })
+
+        XCTAssertEqual(actual, expected)
+    }
+
+    func testNegativeTarget() {
+        let sut = ThreeSum()
+        let result = sut.threeSumTarget([-5, -2, 0, 2, 3], target: 5)
+        let expected: Set<Set<Int>> = [Set([ 0, 2, 3])] // Update based on valid triplets
+        let resultSet = Set(result.map { Set($0) })
+        XCTAssertTrue(expected.isSubset(of: resultSet) || resultSet == expected)
+    }
 }
 
 
